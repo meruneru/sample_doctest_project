@@ -13,11 +13,8 @@ TEST_CASE("testing the factorial function") {
 
 TEST_CASE("multiple dollars") {
     dollar d(5);
-    dollar product = d.times(2);
-    CHECK(product.amount == 10);
-    
-    product = d.times(10);
-    CHECK(product.amount == 50);
+    CHECK_EQ(dollar(5), d.times(1));
+    CHECK_EQ(dollar(10), d.times(2));
 }
 
 TEST_CASE("equals dollars") {
@@ -28,4 +25,15 @@ TEST_CASE("equals dollars") {
     dollar d2(0);
     CHECK(d2.equals(dollar(0)) == true);
     CHECK(d2.equals(dollar(1)) == false);
+}
+
+TEST_CASE("equals operator dollars") {
+    dollar d1(5);
+    dollar d2(5);
+    CHECK_EQ(dollar(5), d1);
+    CHECK_NE(dollar(0), d1);
+    
+    CHECK_EQ(d1, d1);
+    CHECK_EQ(d1, d2);
+    CHECK_EQ(d2, d2);
 }
