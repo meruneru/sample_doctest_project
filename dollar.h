@@ -9,6 +9,7 @@ public:
     int amount;
     dollar(int d);
     dollar times(int multi);
+    bool equals(dollar obj);
 };
 
 #endif /* DOLLAR_H */

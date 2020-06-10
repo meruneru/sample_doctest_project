@@ -19,3 +19,13 @@ TEST_CASE("multiple dollars") {
     product = d.times(10);
     CHECK(product.amount == 50);
 }
+
+TEST_CASE("equals dollars") {
+    dollar d1(5);
+    CHECK(d1.equals(dollar(5)) == true);
+    CHECK(d1.equals(dollar(50)) == false);
+    
+    dollar d2(0);
+    CHECK(d2.equals(dollar(0)) == true);
+    CHECK(d2.equals(dollar(1)) == false);
+}
