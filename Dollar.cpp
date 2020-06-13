@@ -1,12 +1,9 @@
-#include "dollar.h"
-dollar::dollar(int d):amount(d){
-    
+#include "Dollar.h"
+Dollar::Dollar(int d){
+  amount = d;  
 }
 
-dollar dollar::times(int multi){
-    return dollar(amount*multi);
+Dollar Dollar::times(int multi){
+    return Dollar(amount*multi);
 }
 
-bool dollar::equals(dollar obj){
-    return amount==obj.amount;
-}
