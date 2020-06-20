@@ -49,9 +49,9 @@ TEST_CASE("equals operator Franc") {
 TEST_CASE("equals operator Franc and Dollar") {
     Franc d1(5);
     Dollar d2(5);
-    CHECK((d1 != d2));
-    CHECK((Franc(0)==Franc(0)));
-    CHECK((Franc(0)!=Franc(1)));
-    CHECK((Franc(0)!=Dollar(0)));
+    CHECK(d1 != d2);
+    CHECK(Franc(0)==Franc(0));
+    CHECK(Franc(0)!=Franc(1));
+    CHECK(Franc(0)!=Dollar(0));
 }
 
