@@ -8,7 +8,7 @@ class Dollar: public Money{
 private:
 public:
     Dollar(int d);
-    Dollar times(int multi);
+    std::unique_ptr<Money> times(int multi);
 };
 
 #endif /* DOLLAR_H */

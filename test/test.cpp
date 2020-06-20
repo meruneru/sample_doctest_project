@@ -5,13 +5,13 @@
 
 TEST_CASE("multiple Dollars") {
     Dollar d(5);
-    CHECK_EQ(Dollar(5), d.times(1));
-    CHECK_EQ(Dollar(10), d.times(2));
+    CHECK_EQ(Dollar(5), *d.times(1));
+    CHECK_EQ(Dollar(10), *d.times(2));
 }
 TEST_CASE("multiple Franc") {
     Franc f(5);
-    CHECK_EQ(Franc(5), f.times(1));
-    CHECK_EQ(Franc(10), f.times(2));
+    CHECK_EQ(Franc(5), *f.times(1));
+    CHECK_EQ(Franc(10), *f.times(2));
 }
 
 TEST_CASE("equals Dollars") {

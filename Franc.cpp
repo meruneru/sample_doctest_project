@@ -3,7 +3,7 @@ Franc::Franc(int d){
     amount = d;
 }
 
-Franc Franc::times(int multi){
-    return Franc(amount*multi);
+std::unique_ptr<Money> Franc::times(int multi){
+    return std::unique_ptr<Money>(new Franc(amount*multi));
 }
 

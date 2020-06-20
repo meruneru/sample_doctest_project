@@ -8,7 +8,7 @@ class Franc: public Money{
 private:
 public:
     Franc(int d);
-    Franc times(int multi);
+    std::unique_ptr<Money> times(int multi);
 };
 
 #endif /* FRANC_H */

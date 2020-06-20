@@ -5,12 +5,10 @@
 int factorial(int number) { return number > 1 ? factorial(number - 1) * number : 1; }
 
 int main(){
-    const Dollar d(5);
-    const Franc f(5);
+    Dollar d(5);
+    Franc f(5);
 
-    std::cout<<typeid(d).name()<<std::endl;
-    std::cout<<typeid(f).name()<<std::endl;
-    if(d==f){
+    if(d==*d.times(1)){
         std::cout<<"!="<<std::endl;
     }else{
         std::cout<<"=="<<std::endl;

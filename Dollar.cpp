@@ -3,7 +3,7 @@ Dollar::Dollar(int d){
   amount = d;  
 }
 
-Dollar Dollar::times(int multi){
-    return Dollar(amount*multi);
+std::unique_ptr<Money> Dollar::times(int multi){
+    return std::unique_ptr<Money>(new Dollar(amount*multi));
 }
 
