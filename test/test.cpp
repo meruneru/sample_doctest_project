@@ -61,3 +61,13 @@ TEST_CASE("currency") {
     CHECK("USD" == fiveD->currency());
     CHECK("CHF" == fiveF->currency());
 }
+
+TEST_CASE("comprare currency") {
+    CHECK(Money(5,"USD") == Dollar(5, "USD"));
+    CHECK(Dollar(5,"USD") == Dollar(5, "USD"));
+    CHECK(Money(5,"USD") == Money(5, "USD"));
+    
+    CHECK(Money(5,"CHF") == Franc(5, "CHF"));
+    CHECK(Franc(5,"CHF") == Franc(5, "CHF"));
+    CHECK(Money(5,"CHF") == Money(5, "CHF"));
+}
