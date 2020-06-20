@@ -2,10 +2,15 @@
 #include"./Dollar.h"
 #include"./Franc.h"
 
+Money::Money(int d, std::string currency){
+    amount = d;
+    m_currency = currency;
+}
+
 std::unique_ptr<Money> Money::dollar(int amount){
-    return std::unique_ptr<Money>(new Dollar(amount));
+    return std::unique_ptr<Money>(new Dollar(amount, "USD"));
 }
 
 std::unique_ptr<Money> Money::franc(int amount){
-    return std::unique_ptr<Money>(new Franc(amount));
+    return std::unique_ptr<Money>(new Franc(amount, "CHF"));
 }

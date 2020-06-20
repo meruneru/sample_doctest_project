@@ -7,7 +7,7 @@
 class Franc: public Money{
 private:
 public:
-    Franc(int d);
+    Franc(int d, std::string currency);
     std::unique_ptr<Money> times(int multi);
 };
 

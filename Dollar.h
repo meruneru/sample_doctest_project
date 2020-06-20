@@ -7,7 +7,7 @@
 class Dollar: public Money{
 private:
 public:
-    Dollar(int d);
+    Dollar(int d, std::string currency);
     std::unique_ptr<Money> times(int multi);
 };
 

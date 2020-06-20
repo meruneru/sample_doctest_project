@@ -1,10 +1,9 @@
 #include "Franc.h"
 
-Franc::Franc(int d){
-    amount = d;
+Franc::Franc(int d, std::string c):Money(d, c){
 }
 
 std::unique_ptr<Money> Franc::times(int multi){
-    return std::unique_ptr<Money>(new Franc(amount*multi));
+    return Money::franc(amount*multi);
 }
 
