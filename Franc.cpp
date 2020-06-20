@@ -1,4 +1,5 @@
 #include "Franc.h"
+
 Franc::Franc(int d){
     amount = d;
 }

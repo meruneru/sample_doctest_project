@@ -21,9 +21,12 @@ public:
         //std::cout<<"operator!=  this:"<<typeid(*this).name()<<" rhs:"<<typeid(rhs).name()<<std::endl;
         return !(amount==rhs.amount) || typeid(*this).name()!=typeid(rhs).name();
     }
-    
+
     virtual std::unique_ptr<Money> times(int multi) =0;
-    
+   
+    //Factory method
+    static std::unique_ptr<Money> dollar(int amount);
+    static std::unique_ptr<Money> franc(int amount);
 };
 
 #endif /* MONEY_H */

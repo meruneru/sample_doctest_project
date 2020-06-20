@@ -1,4 +1,5 @@
 #include "Dollar.h"
+
 Dollar::Dollar(int d){
   amount = d;  
 }
