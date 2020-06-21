@@ -1,7 +1,10 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
+#include"../Money.h"
+#include"../Expression.h"
 #include "../Dollar.h"
 #include "../Franc.h"
+#include "../Bank.h"
 
 TEST_CASE("multiple Dollars") {
     std::unique_ptr<Money> five = Money::dollar(5);
@@ -70,4 +73,12 @@ TEST_CASE("comprare currency") {
     CHECK(Money(5,"CHF") == Franc(5, "CHF"));
     CHECK(Franc(5,"CHF") == Franc(5, "CHF"));
     CHECK(Money(5,"CHF") == Money(5, "CHF"));
+}
+
+TEST_CASE("bank") {
+    std::unique_ptr<Money> five = Money::dollar(5);
+    std::unique_ptr<Expression> sum = five->plus(five);
+    Bank bank;
+    std::unique_ptr<Money> reduced = bank.reduce(sum, "USD");
+    CHECK(*reduced == *Money::dollar(10));
 }

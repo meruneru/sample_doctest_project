@@ -5,8 +5,9 @@
 #include<typeinfo>
 #include<memory>
 #include<string>
+#include"Expression.h"
 
-class Money{
+class Money: public Expression{
 protected:
     int m_amount;
     std::string m_currency;
@@ -38,6 +39,7 @@ public:
     virtual std::string currency() final {
         return m_currency; 
     }
+    virtual std::unique_ptr<Expression> plus(std::unique_ptr<Money>& rhs ) final;
 };
 
 #endif /* MONEY_H */

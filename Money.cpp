@@ -19,3 +19,6 @@ std::unique_ptr<Money> Money::times(int multi){
     return std::unique_ptr<Money>(new Money(m_amount*multi, m_currency));
 }
 
+std::unique_ptr<Expression> Money::plus(std::unique_ptr<Money>& rhs ){
+    return std::unique_ptr<Expression>(new Money(m_amount+rhs->m_amount, m_currency));
+}
