@@ -8,11 +8,11 @@ Money::Money(int d, std::string currency){
 }
 
 std::unique_ptr<Money> Money::dollar(int amount){
-    return std::unique_ptr<Money>(new Dollar(amount, "USD"));
+    return std::unique_ptr<Money>(new Money(amount, "USD"));
 }
 
 std::unique_ptr<Money> Money::franc(int amount){
-    return std::unique_ptr<Money>(new Franc(amount, "CHF"));
+    return std::unique_ptr<Money>(new Money(amount, "CHF"));
 }
 
 std::unique_ptr<Money> Money::times(int multi){
